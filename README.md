@@ -1,86 +1,56 @@
-##  Resume Analyzer  
-A professional Flask-based REST API that automates resume screening. It uses Regular Expressions (Regex) for high-speed pattern matching and SQL Server to store analysis results in a flexible JSON format.
+# Resume Analyzer
+A Flask-based API that screens resumes using Regex pattern matching and stores the results in SQL Server using JSON for flexibility.
 
-##  How to Run the Project
-### 1. Prerequisites
-Python 3.8+
+# Getting Started
+## 1. Requirements
+Install the necessary Python packages:
 
-SQL Server / LocalDB installed (e.g., (localdb)\MSSQLLocalDB).
+pip install flask pyodbc python-dotenv
+## 2. Database Setup
+Create a database named ResumeDB in SQL Server and run the following command to create the table:
 
-ODBC Driver 17 for SQL Server installed on Windows.
+SQL
+CREATE TABLE candidates (
+    id INT PRIMARY KEY IDENTITY(1,1),
+    name NVARCHAR(100),
+    raw_analysis NVARCHAR(MAX),
+    created_at DATETIME DEFAULT GETDATE()
+);
+## 3. Environment Config (.env)
+Create a .env file in your root directory:
 
-### 2. Installation
-Install the required libraries for Flask, Database connectivity, and Environment management:
 
-Bash
-pip install flask flask-sqlalchemy pyodbc python-dotenv
-### 3. Database Setup
-Open SQL Server Management Studio (SSMS).
+DB_DRIVER=ODBC Driver 17 for SQL Server
 
-Create a new database named ResumeDB.
+DB_SERVER=(localdb)\MSSQLLocalDB
 
-The application will automatically create the candidates table on the first run using db.create_all().
+DB_NAME=ResumeDB
 
-### 4. Configuration (utils/config.py)
-Ensure your connection string points to your LocalDB instance:
+APP_NAME=Resume Analyzer
 
-Server Name: (localdb)\\MSSQLLocalDB
-Driver: ODBC Driver 17 for SQL Server
-##  API Endpoints
-### 1. Health Check
-URL: /health | Method: GET
+REQUIRED_SKILLS=Python,Flask,SQL,Java
 
-Verifies API status and database connectivity.
+REQUIRED_LOCATIONS=Chennai,Madurai
+# API Endpoints
+## Health Check
+URL: /health
 
-### 2. Upload & Analyze Resume
-URL: /upload_resume | Method: POST
+Method: GET
 
-Body: form-data | Key: resume (File)
+Purpose: Confirms the API is online.
 
-Action: Reads the .txt file, calculates a match score, and saves the results as a JSON string in the SQL Server database.
+## Upload Resume
+URL: /upload_resume
 
-##  Sample Request (Postman)
 Method: POST
 
-URL: http://127.0.0.1:5000/upload_resume
+Body: form-data (Key: resume, Type: File)
 
-Body: Select form-data.
+Process: Parses the .txt file, calculates the match score, and saves the full analysis dictionary as a JSON string into the database.
 
-Key: resume, change type to File.
+# Technical Details
+Logic: Uses Regular Expressions (Regex) to find exact word matches for skills and locations.
 
-Value: Upload your .txt file and click Send.
+Storage: Uses raw pyodbc connections to insert data. By storing the result as JSON, you can update your analysis logic without needing to change your SQL table structure.
 
-##  Sample Response (200 OK)
-The API returns the analysis results and confirms the database save.
-
-
-{
-  "message": "Analyzed and Saved to SQL Server successfully",
-  "result": {
-    "candidate_name": "MANOJKUMAR G",
-    "word_count": 245,
-    "match_score": 85.0,
-    "matched_skills": ["Python", "Flask", "SQL", "React.js"],
-    "entities": {
-      "locations": ["Chennai"]
-    },
-    "warnings": []
-  }
-}
-## 🗄 Database Storage Pattern
-The system uses a Hybrid Storage approach. Instead of dozens of columns, we store the core analysis as a single JSON string in an NVARCHAR(MAX) or TEXT column. This allows:
-
-Flexibility: Add new analysis fields without changing the database schema.
-
-Efficiency: Single-row insertion per candidate.
-
-Querying: SQL Server can still query this data using JSON_VALUE().
-
-## 🛠 Tech Stack
-Framework: Flask (Python)
-
-Database: SQL Server (LocalDB)
-
-ORM: SQLAlchemy (Flask-SQLAlchemy)
-
-Parsing: Regex (Regular Expressions)
+Security: Uses parameterized queries (? placeholders) to prevent SQL injection.

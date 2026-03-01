@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ad5a676-7486-4ddd-ae39-e485b6b08b2b" name="Changes" comment="basic setup">
-      <change afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/candidate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/analyzer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/file_handler.py" afterDir="false" />
+    <list default="true" id="8ad5a676-7486-4ddd-ae39-e485b6b08b2b" name="Changes" comment="add db connection">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/candidate.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772178756833</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add db connection">
+      <option name="closed" value="true" />
+      <created>1772257217763</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772257217764</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +119,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic setup" />
+    <MESSAGE value="add db connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add db connection" />
   </component>
 </project>
