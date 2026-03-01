@@ -1,0 +1,53 @@
+MANOJKUMAR G
+Email: manojkumarg240@gmail.com
+Phone: +91 7904978833
+
+
+PROJECT
+
+QR Code Generator Project Link
+- A lightweight web app for instantly generating and downloading clean, shareable QR codes for links and text.
+- Added copy-to-clipboard and download options for user convenience.
+- Tech Stack: React.js, Tailwind CSS, HTML, CSS.
+
+Student Management API GitHub Link
+- A secure .NET 9 Web API for managing students, teachers, and admins with JWT Authentication & Authorization.
+- Implements role-based access control: Students (view profiles & marks), Teachers (add marks), Admins (manage users, update roles, delete accounts).
+- Provides authentication with Access + Refresh Tokens and API documentation using Scalar UI.
+- Tech Stack: C#, .NET 9 (ASP.NET Core Web API), Entity Framework Core, SQL Server, JWT, Scalar
+
+
+EDUCATION
+
+SSLC - Govt Hr. Sec. School, Virudhunagar
+72%
+Jun 2019 - Mar 2020
+
+HSC - Devangar Hr. Sec. School, Virudhunagar
+88%
+Jun 2021 - May 2022
+
+B.E. Computer Science and Engineering
+Kamaraj College of Engineering and Technology, Virudhunagar
+CGPA: 8.36 (up to 6th sem)
+Nov 2022 - Present
+
+
+ACHIEVEMENTS
+
+- Oracle Certified: Java Certified Foundations Associate
+- SkillRack: SkillRack
+- LeetCode: LeetCode
+- HackerRank: HackerRank
+
+
+SKILLS
+
+Languages: java
+Frameworks: React.js, Node.js, ASP.NET Core, Express.js
+Web: HTML, CSS, JavaScript
+Databases: MySQL, MongoDB
+Tools: VS Code, GitHub, Postman
+Core: DSA, DBMS, OOPS, Machine Learning
+Soft Skills: Problem-Solving, Teamwork, Adaptability
+

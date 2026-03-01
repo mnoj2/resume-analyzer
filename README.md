@@ -48,6 +48,29 @@ Body: form-data (Key: resume, Type: File)
 
 Process: Parses the .txt file, calculates the match score, and saves the full analysis dictionary as a JSON string into the database.
 
+# Sample Requests & Responses
+### Sample Request (Postman/cURL)
+Set method to POST.
+
+Enter URL: http://127.0.0.1:5000/upload_resume.
+
+In Body > form-data, add a key named resume, change type to File, and upload a .txt resume.
+
+### Sample Success Response (200 OK)
+{
+  "message": "resume.txt is analyzed successfully",
+  "result": {
+    "candidate_name": "MANOJKUMAR G",
+    "entities": {
+      "locations": ["Chennai"]
+    },
+    "match_score": 75.0,
+    "matched_skills": ["Python", "SQL", "Java"],
+    "warnings": [],
+    "word_count": 250
+  }
+}
+
 # Technical Details
 Logic: Uses Regular Expressions (Regex) to find exact word matches for skills and locations.
 
